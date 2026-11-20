@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHISIR GAYEN</title>
+<meta name="description" content="A quiet mind, a curious spirit, and a journey still unfolding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f0a1f;
+  --bg2:#1a1038;
+  --wave:#7c4dff;
+  --glow:#a77bff;
+  --text:#f3eeff;
+  --muted:#b9acd9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:"Outfit","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  background:radial-gradient(120% 90% at 50% 0%,var(--bg2),var(--bg) 70%);
+  color:var(--text);
+  display:flex;align-items:center;justify-content:center;
+  min-height:100vh;min-height:100dvh;
+  overflow-x:hidden;position:relative;
+  padding:24px;
+}
+/* Subtle purple waves */
+.waves{position:fixed;inset:auto 0 0 0;height:55vh;pointer-events:none;z-index:0}
+.waves svg{width:200%;height:100%;display:block;position:absolute;bottom:0;left:0}
+.w1{animation:drift 22s linear infinite;opacity:.35}
+.w2{animation:drift 32s linear infinite reverse;opacity:.22}
+.w3{animation:drift 44s linear infinite;opacity:.14}
+@keyframes drift{to{transform:translateX(-50%)}}
+
+main{position:relative;z-index:1;text-align:center;max-width:520px;width:100%}
+.frame{
+  width:min(200px,52vw);aspect-ratio:1;margin:0 auto 32px;border-radius:50%;
+  padding:5px;background:linear-gradient(145deg,var(--glow),var(--wave));
+  box-shadow:0 0 0 6px rgba(167,123,255,.12),0 0 40px 8px rgba(124,77,255,.55),0 0 90px 24px rgba(124,77,255,.25);
+  animation:pulse 4.5s ease-in-out infinite;
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+.frame:hover{transform:scale(1.05);box-shadow:0 0 0 8px rgba(167,123,255,.18),0 0 55px 12px rgba(167,123,255,.7),0 0 110px 30px rgba(124,77,255,.35)}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(167,123,255,.16),0 0 54px 12px rgba(124,77,255,.7),0 0 110px 30px rgba(124,77,255,.3)}}
+.frame img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;background:var(--bg2)}
+
+h1{font-weight:600;font-size:clamp(2rem,7vw,3.1rem);letter-spacing:.14em;line-height:1.1;margin-bottom:16px}
+.caption{color:var(--muted);font-weight:300;font-size:clamp(1rem,3.4vw,1.2rem);line-height:1.6;max-width:30ch;margin:0 auto 36px}
+
+.email{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:13px 26px;border-radius:999px;text-decoration:none;color:var(--text);
+  border:1px solid rgba(167,123,255,.45);background:rgba(124,77,255,.12);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  font-size:1rem;letter-spacing:.02em;
+  transition:transform .3s ease,background .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.email svg{width:22px;height:22px;stroke:var(--glow);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s ease}
+.email:hover,.email:focus-visible{
+  transform:translateY(-3px);background:rgba(124,77,255,.28);border-color:var(--glow);
+  box-shadow:0 8px 30px rgba(124,77,255,.45);outline:none;
+}
+.email:hover svg{transform:rotate(-8deg) scale(1.1)}
+.email:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+
+.reveal{opacity:0;transform:translateY(16px);animation:in .9s ease forwards}
+.reveal:nth-child(2){animation-delay:.15s}
+.reveal:nth-child(3){animation-delay:.3s}
+.reveal:nth-child(4){animation-delay:.45s}
+@keyframes in{to{opacity:1;transform:none}}
+
+@media (max-width:480px){body{padding:18px}.email{padding:12px 22px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="waves" aria-hidden="true">
+  <svg class="w3" viewBox="0 0 1440 300" preserveAspectRatio="none"><path fill="#7c4dff" d="M0 140C120 100 240 100 360 140S600 180 720 140 960 100 1080 140 1320 180 1440 140V300H0Z"/></svg>
+  <svg class="w2" viewBox="0 0 1440 300" preserveAspectRatio="none"><path fill="#6a3fe0" d="M0 180C120 140 240 140 360 180S600 220 720 180 960 140 1080 180 1320 220 1440 180V300H0Z"/></svg>
+  <svg class="w1" viewBox="0 0 1440 300" preserveAspectRatio="none"><path fill="#5a2fc9" d="M0 220C120 190 240 190 360 220S600 250 720 220 960 190 1080 220 1320 250 1440 220V300H0Z"/></svg>
+</div>
+
+<main>
+  <div class="frame reveal">
+    <!-- নিজের ছবির ফাইলের নাম profile.jpg রেখে index.html এর পাশে রাখুন -->
+    <img src="profile.jpg" alt="Shisir Gayen"
+         onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%231a1038%22/><text x=%22100%22 y=%22124%22 font-size=%2272%22 font-family=%22sans-serif%22 fill=%22%23a77bff%22 text-anchor=%22middle%22>SG</text></svg>'">
+  </div>
+
+  <h1 class="reveal">SHISIR GAYEN</h1>
+  <p class="caption reveal">A quiet mind, a curious spirit, and a journey still unfolding.</p>
+
+  <a class="email reveal" href="mailto:studywithdewofficial@gmail.com" aria-label="Send an email">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    <span>studywithdewofficial@gmail.com</span>
+  </a>
+</main>
+
+</body>
+</html>
